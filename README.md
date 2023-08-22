@@ -17,9 +17,9 @@ or simply run the slrc.py
 
 output file:
 
-[ti:Wish]
+[ti:Wish You Were Here]
 
-[ar:Pink]
+[ar:Pink Floyd]
 
 [00:05.53] And disciplinary remains mercifully
 
