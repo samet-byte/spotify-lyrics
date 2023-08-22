@@ -15,6 +15,7 @@ output file:
 [ar:Pink]
 
 [00:05.53] And disciplinary remains mercifully
+
 [00:08.19] Yes and um, I'm with you Derek, this star nonsense
 [00:11.98] Yes, yes
 [00:12.57] Now which is it?
