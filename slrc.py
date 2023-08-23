@@ -8,26 +8,35 @@ def create_lrc_file(track, artist, lyrics):
     with open(f"{artist} - {track}.lrc", "w") as lrc_file:
         lrc_file.write(lrc_content)
 
-artist = None
-track = None
+artist = ""
+track = ""
+
+current_arg = None
 
 if len(sys.argv) > 1:
 
     for (i, arg) in enumerate(sys.argv):
         if arg == "-a":
-            artist = sys.argv[i+1]
+            current_arg = "artist"
         elif arg == "-t":
-            track = sys.argv[i+1]
+            current_arg = "track"
         elif arg == "-h":
             print("Usage: python spotify_api.py [-a artist] [-t track]")
             exit()
+        elif current_arg == "artist":
+            artist += sys.argv[i] + " "
+        elif current_arg == "track":
+            track += sys.argv[i] + " "
+
+    artist = artist.strip()
+    track = track.strip()
 
 
 else:
     artist = input("Artist : ")
     track = input("Track  : ")
 
-track_id = subprocess.run(["python", "get_spotify_track_id_with_artist_title.py", artist , track], capture_output=True, text=True).stdout.strip()
+track_id = subprocess.run(["python", "get_spotify_track_id_with_artist_title.py", artist, track], capture_output=True, text=True).stdout.strip()
 
 api_url = f"https://spotify-lyric-api.herokuapp.com/?trackid={track_id}&format=lrc"
 response = requests.get(api_url)
