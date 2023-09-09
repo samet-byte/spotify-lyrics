@@ -11,7 +11,11 @@ Heroku API from @akashrchandran/spotify-lyrics-api
 You can use the script by running the following command:
 
 ```bash
+# SYNCED LYRICS
 python slrc.py -a Pink Floyd -t Wish You Were Here
+# DOWNLOAD MUSIC
+python deezer_stuff.py DESIRED MUSIC WITH ANY FORMAT
+python deezer_stuff.py Wish You Were Here Pink Floyd
 ```
 
 The script will then search for the track on Spotify and extract the lyrics from the first result.
